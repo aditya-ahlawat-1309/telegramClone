@@ -52,8 +52,10 @@ const ProfileModal = ({ user, children }) => {
             <Image
               borderRadius="full"
               boxSize="150px"
-              src={user.pic}
+              src={user.name}
               alt={user.name}
+              color="white"
+              bg="black"
             />
             <Text
               fontSize={{ base: "28px", md: "30px" }}

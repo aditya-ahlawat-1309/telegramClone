@@ -37,7 +37,7 @@ function Homepage() {
         style={{ display: "flex" }}
       >
         <Text fontSize="4xl" fontFamily="Work sans">
-          Telegram
+          WhatsApp
         </Text>
       </Box>
       <Box bg="transparent" w="100%" p={4} borderRadius="lg" borderWidth="0px">

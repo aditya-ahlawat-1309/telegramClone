@@ -30,8 +30,8 @@ const UserListItem = ({user, handleFunction }) => {
         cursor="pointer"
         name={user.name}
         src={user.name}
-        color="white"
-        bg="black"
+        color="black"
+        bg={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
       />
       <Box>
         <Text>{user.name}</Text>

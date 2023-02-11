@@ -90,12 +90,13 @@ const MyChats = ({ fetchAgain }) => {
         flexDir="column"
         // p={3}
         // bg="#F8F8F8"
-        bg="#EDEBE4"
+        bg="#fff"
         w="100%"
         h="85vh"
         borderRadius="lg"
+        border="black"
         overflowY="scroll"
-        style={{ dipslay: "flex" }}
+        style={{ dipslay: "flex", border: "black" }}
         className="my-chats-stack"
       >
         {chats ? (
@@ -104,13 +105,15 @@ const MyChats = ({ fetchAgain }) => {
               <Box
                 onClick={() => setSelectedChat(chat)}
                 cursor="pointer"
-                bg={selectedChat === chat ? "#25D366" : "#f6f6f6"}
+                bg={selectedChat === chat ? "#25D366" : "#fff"}
                 color={selectedChat === chat ? "black" : "black"}
                 px={3}
                 py={2}
                 borderRadius="lg"
                 key={chat._id}
                 style={{ display: "flex" }}
+                border="1px"
+                borderColor="black.200"
               >
                 <Avatar
                   mt="7px"
@@ -119,8 +122,8 @@ const MyChats = ({ fetchAgain }) => {
                   cursor="pointer"
                   name={getSender(loggedUser, chat.users)}
                   src={getSender(loggedUser, chat.users)}
-                  color="white"
-                  bg="black"
+                  color="black"
+                  bg={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
                 />
                 <Text>
                   &nbsp;&nbsp;&nbsp;

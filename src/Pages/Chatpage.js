@@ -11,6 +11,8 @@ import Chatbox from "../components/Chatbox";
 import MyChats from "../components/MyChats";
 import SideDrawer from "../components/miscellaneous/SideDrawer";
 import { ChatState } from "../Context/ChatProvider";
+import "../App.css"
+
 const Chatpage = () => {
 
     const reload = function () {
@@ -40,7 +42,7 @@ const Chatpage = () => {
 
 //   },[]);
   return (
-    <>
+    <div className="App">
       {/* <div style={{ width: "100%" }}>
       {user && <SideDrawer />}
       <Box
@@ -117,7 +119,7 @@ const Chatpage = () => {
           </Box>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

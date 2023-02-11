@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import { useHistory } from "react-router";
 import Login from "../components/Authentication/Login";
 import Signup from "../components/Authentication/Signup";
+import "../App.css"
 
 function Homepage() {
   const history = useHistory();
@@ -23,7 +24,7 @@ function Homepage() {
   }, [history]);
 
   return (
-    <Container maxW="xl" centerContent>
+    <Container maxW="xl" centerContent className="App">
       <Box
         d="flex"
         justifyContent="center"

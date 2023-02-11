@@ -12,7 +12,9 @@ import {
   IconButton,
   Text,
   Image,
+  Avatar,
 } from "@chakra-ui/react";
+
 
 const ProfileModal = ({ user, children }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -49,14 +51,26 @@ const ProfileModal = ({ user, children }) => {
             justifyContent="space-between"
             style={{ display: "flex" }}
           >
-            <Image
+            <Avatar
+              mt="7px"
+              mr={1}
+              size="xl"
+              cursor="pointer"
+              name={user.name.charAt(0)}
+              src={user.name.charAt(0)}
+              color="white"
               borderRadius="full"
               boxSize="150px"
-              src={user.name}
-              alt={user.name}
+              bg="green"
+            />
+            {/* <Image
+              borderRadius="full"
+              boxSize="150px"
+              src={user.name.charAt(0)}
+              alt={user.name.charAt(0)}
               color="white"
               bg="black"
-            />
+            /> */}
             <Text
               fontSize={{ base: "28px", md: "30px" }}
               fontFamily="Work sans"

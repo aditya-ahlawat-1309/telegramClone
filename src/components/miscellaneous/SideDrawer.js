@@ -199,7 +199,7 @@ function SideDrawer() {
                 name={user.name}
                 src={user.name}
                 color="white"
-                bg="black"
+                bg="green"
               />
             </MenuButton>
             <MenuList>

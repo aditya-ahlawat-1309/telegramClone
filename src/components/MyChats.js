@@ -61,20 +61,21 @@ const MyChats = ({ fetchAgain }) => {
 
 
   return (
-    <Box
-      d={{ base: selectedChat ? "none" : "flex", md: "flex" }}
-      flexDir="column"
-      alignItems="center"
-      // p={3}
-      bg="transparent"
-      // w={{ base: "100%", md: "31%" }}
-      // borderRadius="lg"
-      // borderWidth="1px"
-      style={{ display: "flex" }}
-    >
-      <Box
-        pb={3}
-        px={3}
+    <>
+      {/* <Box
+        d={{ base: selectedChat ? "none" : "flex", md: "flex" }}
+        flexDir="column"
+        alignItems="center"
+        // p={3}
+        bg="transparent"
+        // w={{ base: "100%", md: "31%" }}
+        // borderRadius="lg"
+        // borderWidth="1px"
+        style={{ display: "flex" }}
+      > */}
+        {/* <Box
+        // pb={3}
+        // px={3}
         fontSize={{ base: "28px", md: "30px" }}
         fontFamily="Work sans"
         d="flex"
@@ -84,72 +85,104 @@ const MyChats = ({ fetchAgain }) => {
         style={{ display: "flex" }}
       >
         <div className="display-small-screen">My Chats</div>
-      </Box>
-      <Box
-        d="flex"
-        flexDir="column"
-        // p={3}
-        // bg="#F8F8F8"
-        bg="#fff"
-        w="100%"
-        h="85vh"
-        borderRadius="lg"
-        border="black"
-        overflowY="scroll"
-        style={{ dipslay: "flex", border: "black" }}
-        className="my-chats-stack"
-      >
-        {chats ? (
-          <Stack overflowY="scroll">
-            {chats.map((chat) => (
-              <Box
-                onClick={() => setSelectedChat(chat)}
-                cursor="pointer"
-                bg={selectedChat === chat ? "#25D366" : "#fff"}
-                color={selectedChat === chat ? "black" : "black"}
-                px={3}
-                py={2}
-                borderRadius="lg"
-                key={chat._id}
-                style={{ display: "flex" }}
-                border="1px"
-                borderColor="black.200"
-              >
-                <Avatar
-                  mt="7px"
-                  mr={1}
-                  size="sm"
-                  cursor="pointer"
-                  name={getSender(loggedUser, chat.users)}
-                  src={getSender(loggedUser, chat.users)}
-                  color="black"
-                  bg={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
-                />
-                <Text>
-                  &nbsp;&nbsp;&nbsp;
-                  {!chat.isGroupChat
-                    ? getSender(loggedUser, chat.users)
-                    : chat.chatName}
-                  {/* {chat.chatName}*/}
-                  {chat.latestMessage && (
-                    <Text fontSize="xs">
+      </Box> */}
+        <Box
+          // d="flex"
+          // flexDir="column"
+          // p={3}
+          // bg="#F8F8F8"
+          bg="#fff"
+          w="100%"
+          h="88vh"
+          // borderRadius="lg"
+          // border="black"
+          overflowY="scroll"
+          // style={{ dipslay: "flex" }}
+          // className="my-chats-stack"
+        >
+          {chats ? (
+            <Stack overflowY="scroll">
+              {chats.map((chat) => (
+                <div>
+                  <span
+                    style={{
+                      float: "right",
+                      color: "black",
+                      fontSize: "11px",
+                      marginTop: "11px",
+                      color: "green",
+                    }}
+                  >
+                    {chat.latestMessage.createdAt.substring(0, 10) ===
+                    new Date(Date.now()).toISOString().substring(0, 10)
+                      ? chat.latestMessage.createdAt.substring(11, 16)
+                      : chat.latestMessage.createdAt.substring(0, 10)}
+                  </span>
+                  <Box
+                    onClick={() => setSelectedChat(chat)}
+                    cursor="pointer"
+                    bg={selectedChat === chat ? "#25D366" : "#fff"}
+                    color={selectedChat === chat ? "black" : "black"}
+                    px={3}
+                    py={2}
+                    borderRadius="lg"
+                    key={chat._id}
+                    style={{ display: "flex" }}
+                    // border="1px"
+                    // borderColor="black.200"
+                  >
+                    <Avatar
+                      mt="7px"
+                      mr={1}
+                      size="sm"
+                      cursor="pointer"
+                      name={getSender(loggedUser, chat.users)}
+                      src={getSender(loggedUser, chat.users)}
+                      color="black"
+                      bg={`#${Math.floor(
+                        (getSender(loggedUser, chat.users).charCodeAt(0) /
+                          1000) *
+                          18789500
+                      ).toString(16)}`}
+                    />
+                    {/* {console.log(new Date(Date.now()).toISOString().substring(0,10))} */}
+                    <Text>
                       &nbsp;&nbsp;&nbsp;
-                      <b>{chat.latestMessage.sender.name} : </b>
-                      {chat.latestMessage.content.length > 50
-                        ? chat.latestMessage.content.substring(0, 51) + "..."
-                        : chat.latestMessage.content}
+                      {!chat.isGroupChat
+                        ? getSender(loggedUser, chat.users)
+                        : chat.chatName}
+                      {/* {chat.chatName}*/}
+                      {chat.latestMessage && (
+                        <Text fontSize="xs">
+                          &nbsp;&nbsp;&nbsp;
+                          <b>
+                            {chat.isGroupChat
+                              ? chat.latestMessage.sender.name + " : "
+                              : " "}
+                          </b>
+                          {chat.latestMessage.content.length > 50
+                            ? chat.latestMessage.content.substring(0, 51) +
+                              "..."
+                            : chat.latestMessage.content}
+                        </Text>
+                      )}
                     </Text>
-                  )}
-                </Text>
-              </Box>
-            ))}
-          </Stack>
-        ) : (
-          <ChatLoading />
-        )}
-      </Box>
-    </Box>
+                  </Box>
+                </div>
+              ))}
+            </Stack>
+          ) : (
+            <ChatLoading />
+          )}
+        </Box>
+      {/* </Box> */}
+    </>
   );
 };
 
 export default MyChats;
+
+ {/* */}
+      {
+        /* </Box> */
+      }

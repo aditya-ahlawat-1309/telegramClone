@@ -33,14 +33,14 @@ function Homepage() {
         w="100%"
         m="40px 0 15px 0"
         borderRadius="lg"
-        borderWidth="1px"
+        borderWidth="0px"
         style={{ display: "flex" }}
       >
         <Text fontSize="4xl" fontFamily="Work sans">
-          Teleco
+          Telegram
         </Text>
       </Box>
-      <Box bg="transparent" w="100%" p={4} borderRadius="lg" borderWidth="1px">
+      <Box bg="transparent" w="100%" p={4} borderRadius="lg" borderWidth="0px">
         <Tabs isFitted variant="soft-rounded">
           <TabList mb="1em">
             <Tab>Login</Tab>

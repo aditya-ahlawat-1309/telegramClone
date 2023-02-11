@@ -53,10 +53,10 @@ console.log(messages.length)
                       fontSize: "10px",
                       padding: "15px 5px 5px 15px",
                       textAlign: "center",
-                      marginLeft: "45%",
+                      marginLeft: "40%",
                       marginBottom: "10%",
                       backgroundColor: "lightblue",
-                      borderRadius: "20px",
+                      borderRadius: "5px",
                       padding: "5px 15px",
                     }}
                   >

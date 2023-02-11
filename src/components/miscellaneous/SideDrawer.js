@@ -34,6 +34,7 @@ import { ChatState } from "../../Context/ChatProvider";
 import GroupChatModal from "./GroupChatModal";
 
 function SideDrawer() {
+  const [messages, setMessages] = useState([]);
   const [search, setSearch] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -136,14 +137,15 @@ function SideDrawer() {
         d="flex"
         justifyContent="space-between"
         alignItems="center"
-        bg="transparent"
+        bg="#128c7e"
         w="100%"
         p="5px 10px 5px 10px"
         // borderWidth="5px"
         style={{ display: "flex" }}
+        color="white"
       >
         <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
-          <Button variant="ghost" onClick={onOpen} leftIcon={<SearchIcon />}>
+          {/* <Button variant="ghost" onClick={onOpen} leftIcon={<SearchIcon />}>
             <Text
               d={{ base: "none", md: "flex" }}
               px={4}
@@ -151,16 +153,23 @@ function SideDrawer() {
             >
               Search User
             </Text>
-          </Button>
+          </Button> */}
+          <Text
+            d={{ base: "none", md: "flex" }}
+            px={4}
+            style={{ display: "flex", fontWeight: "bold" }}
+          >
+            WhatsApp
+          </Text>
         </Tooltip>
 
-        <Text
+        {/* <Text
           fontSize="2xl"
           fontFamily="Work sans"
           className="display-small-screen"
         >
           AD Chat App
-        </Text>
+        </Text> */}
         <div>
           <Menu>
             <MenuButton p={1}>
@@ -170,7 +179,7 @@ function SideDrawer() {
               />
               <BellIcon fontSize="2xl" m={1} />
             </MenuButton>
-            <MenuList pl={2}>
+            <MenuList pl={2} color="black">
               {!notification.length && "No New Messages"}
               {notification.map((notif) => (
                 <MenuItem
@@ -187,6 +196,17 @@ function SideDrawer() {
               ))}
             </MenuList>
           </Menu>
+          <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
+            <Button variant="ghost" onClick={onOpen} leftIcon={<SearchIcon />}>
+              {/* <Text
+              d={{ base: "none", md: "flex" }}
+              px={4}
+              style={{ display: "flex" }}
+            >
+              Search User
+            </Text> */}
+            </Button>
+          </Tooltip>
           <Menu>
             <MenuButton
               as={Button}
@@ -198,11 +218,11 @@ function SideDrawer() {
                 cursor="pointer"
                 name={user.name}
                 src={user.name}
-                color="white"
-                bg="green"
+                color="#128c7e"
+                bg="white"
               />
             </MenuButton>
-            <MenuList>
+            <MenuList color="black">
               <ProfileModal user={user}>
                 <MenuItem>My Profile</MenuItem>{" "}
               </ProfileModal>

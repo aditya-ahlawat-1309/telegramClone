@@ -207,21 +207,21 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             justifyContent="flex-end"
             p={3}
             w="100%"
-            h="80vh"
+            h="87.5vh"
             borderRadius="lg"
             overflowY="scroll"
             style={{
               display: "flex",
-                backgroundSize: "auto",
-                backgroundRepeat: "no-repeat",
-                backgroundImage:
-                  "url(" +
-                  "https://images.pexels.com/photos/6491643/pexels-photo-6491643.jpeg?cs=srgb&dl=pexels-hani-hakkam-6491643.jpg&fm=jpg" +
-                  ")",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundImage:
+                "url(" +
+                "https://wallpapers.com/images/file/whatsapp-chat-flying-bird-vector-rfw64608p6ous6hs.jpg" +
+                ")",
 
-               // "url(" + "https://wallpaperaccess.com/full/424833.jpg" + ")",
+              // "url(" + "https://wallpaperaccess.com/full/424833.jpg" + ")",
               // `url(${background})`
-              
+
               // backgroundColor: "#CDCDCD",
             }}
           >
@@ -280,7 +280,6 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             Click on a user to start chatting
           </Text> */}
         </Box>
-        
       )}
     </>
   );

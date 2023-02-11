@@ -61,7 +61,7 @@ const Chatpage = () => {
       </Box>
     </div> */}
 
-      {window.innerWidth > 500 ? (
+      {window.innerWidth > 15000 ? (
         <div style={{ width: "100%" }}>
           {user && <SideDrawer />}
           <Box
@@ -75,19 +75,18 @@ const Chatpage = () => {
             {user && (
               <Chatbox fetchAgain={fetchAgain} setFetchAgain={setFetchAgain} />
             )}
-            <br />
             {user && <MyChats fetchAgain={fetchAgain} />}
           </Box>
         </div>
       ) : (
         <div style={{ width: "100%" }}>
-          {user && <SideDrawer onClick={handleTabsChange} />}
+          {user && !tabIndex && <SideDrawer onClick={handleTabsChange} />}
           <Box
-            d="flex"
-            justifyContent="space-between"
+            // d="flex"
+            // justifyContent="space-between"
             w="100%"
-            h="91.5vh"
-            p="10px"
+            // h="91.5vh"
+            // p="10px"
             className="display-screen"
           >
             {" "}

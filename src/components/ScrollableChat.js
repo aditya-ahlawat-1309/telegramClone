@@ -49,9 +49,9 @@ for(var i=0;i<messages.length;i++)
                 padding: "5px 15px",
               }}
             > */}
-          {"S=" + m.sender._id}
+          {/* {"S=" + m.sender._id}
           <br/>
-      {"U=" + user._id}
+      {"U=" + user._id} */}
             {array[i - 1] ? (
               array[i].createdAt.substring(0, 10) ===
               array[i - 1].createdAt.substring(0, 10) ? (

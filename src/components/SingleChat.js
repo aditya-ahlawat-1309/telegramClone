@@ -21,6 +21,7 @@ var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   const [messages, setMessages] = useState([]);
+  const [readers, setReaders] = useState([]);
   const [loading, setLoading] = useState(false);
   const [newMessage, setNewMessage] = useState("");
   const [socketConnected, setSocketConnected] = useState(false);
@@ -38,6 +39,10 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   };
   const { selectedChat, setSelectedChat, user, notification, setNotification } =
     ChatState();
+
+    if(selectedChat && !readers.includes(user._id)){
+       readers.push(user._id)
+    }
 
   const fetchMessages = async () => {
     if (!selectedChat) return;
@@ -87,6 +92,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           {
             content: newMessage,
             chatId: selectedChat,
+            readBy: readers
           },
           config
         );

@@ -136,8 +136,20 @@ const MyChats = ({ fetchAgain }) => {
                     mr={1}
                     size="sm"
                     cursor="pointer"
-                    name={getSender(loggedUser, chat.users)}
-                    src={getSender(loggedUser, chat.users)}
+                    name={
+                      !chat.isGroupChat
+                        ? user._id === chat.users[0]._id
+                          ? chat.users[1].name
+                          : chat.users[0].name
+                        : chat.chatName
+                    }
+                    src={
+                      !chat.isGroupChat
+                        ? user._id === chat.users[0]._id
+                          ? chat.users[1].name
+                          : chat.users[0].name
+                        : chat.chatName
+                    }
                     color="black"
                     bg={`#${Math.floor(
                       (getSender(loggedUser, chat.users).charCodeAt(0) / 1000) *
@@ -148,9 +160,9 @@ const MyChats = ({ fetchAgain }) => {
                   <Text>
                     &nbsp;&nbsp;&nbsp;
                     {!chat.isGroupChat
-                      ? (user._id === chat.users[0]._id
+                      ? user._id === chat.users[0]._id
                         ? chat.users[1].name
-                        : chat.users[0].name)
+                        : chat.users[0].name
                       : chat.chatName}
                     {/* {chat.chatName}*/}
                     {chat.latestMessage && (

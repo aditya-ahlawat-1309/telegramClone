@@ -24,11 +24,11 @@ const ScrollableChat = ({ messages }) => {
 //   messages[messages.length - 1].createdAt ===
 //     messages[messages.length - 2].createdAt
 // 
-console.log(user._id)
-for(var i=0;i<messages.length;i++)
-{
-    messages[i].readBy.push(user._id);
-}
+// console.log(user._id)
+// for(var i=0;i<messages.length;i++)
+// {
+//     messages[i].readBy.push(user._id);
+// }
     return (
     <ScrollableFeed>
       {messages &&

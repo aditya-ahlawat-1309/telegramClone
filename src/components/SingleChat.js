@@ -174,6 +174,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             justifyContent={{ base: "space-between" }}
             alignItems="center"
             style={{ display: "flex" }}
+            
           >
             {/* <IconButton
               className="display-small-screen"
@@ -185,7 +186,8 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             {messages &&
               (!selectedChat.isGroupChat ? (
                 <>
-                  {getSender(user, selectedChat.users)}
+                  {/* {getSender(user, selectedChat.users)} */}
+                  {user._id === selectedChat.users[0]._id ? selectedChat.users[1].name : selectedChat.users[0].name}
                   <ProfileModal
                     user={getSenderFull(user, selectedChat.users)}
                   />

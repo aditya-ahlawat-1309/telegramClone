@@ -29,19 +29,24 @@ function Homepage() {
         d="flex"
         justifyContent="center"
         p={3}
-        bg="transparent"
+        bg="white"
         w="100%"
         m="40px 0 15px 0"
         borderRadius="lg"
         borderWidth="0px"
         style={{ display: "flex" }}
       >
-        <Text fontSize="4xl" fontFamily="Work sans">
+        <Text
+          fontSize="4xl"
+          fontFamily="Work sans"
+          color="green"
+          fontWeight="bold"
+        >
           WhatsApp
         </Text>
       </Box>
-      <Box bg="transparent" w="100%" p={4} borderRadius="lg" borderWidth="0px">
-        <Tabs isFitted variant="soft-rounded">
+      <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="0px">
+        <Tabs isFitted variant="soft-rounded" colorScheme="green">
           <TabList mb="1em">
             <Tab>Login</Tab>
             <Tab>Sign Up</Tab>

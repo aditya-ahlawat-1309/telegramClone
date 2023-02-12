@@ -7,19 +7,29 @@ import {
   isSameSenderMargin,
   isSameUser,
   isLastMessageOnDifferentDateFromPrevMessage,
+  getSender,
 } from "../config/ChatLogics";
 import { ChatState } from "../Context/ChatProvider";
 
 const ScrollableChat = ({ messages }) => {
   const { user } = ChatState();
-console.log(messages.length)
+  
+// console.log(messages.length)
+// console.log(messages[messages.length-1].sender._id === user._id)
+// console.log(messages[messages.length - 1].sender._id);
+// console.log(messages[messages.length - 1].readBy)
 // console.log(messages[messages.length-1].createdAt)
 // console.log(messages[messages.length-2].createdAt)
 // console.log(
 //   messages[messages.length - 1].createdAt ===
 //     messages[messages.length - 2].createdAt
-// );
-  return (
+// 
+console.log(user._id)
+for(var i=0;i<messages.length;i++)
+{
+    messages[i].readBy.push(user._id);
+}
+    return (
     <ScrollableFeed>
       {messages &&
         messages.map((m, i, array) => (
@@ -39,6 +49,9 @@ console.log(messages.length)
                 padding: "5px 15px",
               }}
             > */}
+          {"S=" + m.sender._id}
+          <br/>
+      {"U=" + user._id}
             {array[i - 1] ? (
               array[i].createdAt.substring(0, 10) ===
               array[i - 1].createdAt.substring(0, 10) ? (
@@ -136,6 +149,12 @@ console.log(messages.length)
                   }}
                 >
                   {m.updatedAt.substring(11, 16)}
+                  &nbsp;{" "}
+                  {m.sender._id === user._id ? ( array[i].readBy.includes(user._id)
+                      ? "seen"
+                      : "sent" ) : ""
+                    
+                    }
                 </span>
               </span>
             </div>

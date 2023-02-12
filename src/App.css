@@ -31,12 +31,14 @@ background-image: none;
 /* .display-screen{ display:flex; } */
 
 @media (max-width: 8100px) {
-  .display-screen{ display:block; }
+  /* .display-screen{ display:block; } */
   .display-small-screen{display: none;}
   .App{
     height: 100vh;
-  width: 100vw;
+    width: 100vw;
     background-image: none;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-color: #fff;
   }
 }

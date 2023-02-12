@@ -85,9 +85,10 @@ const Chatpage = () => {
             // d="flex"
             // justifyContent="space-between"
             w="100%"
+            style={{width:"100%"}}
             // h="91.5vh"
-            // p="10px"
-            className="display-screen"
+            // // p="10px"
+            // className="display-screen"
           >
             {" "}
             <Tabs

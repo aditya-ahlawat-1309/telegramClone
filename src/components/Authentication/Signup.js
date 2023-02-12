@@ -75,13 +75,14 @@ const Signup = () => {
     } catch (error) {
       toast({
         title: "Error Occured!",
-        description: error.response.data.message,
+        description: error.response,
         status: "error",
         duration: 5000,
         isClosable: true,
         position: "bottom",
       });
       setPicLoading(false);
+      console.log(error);
     }
   };
 
@@ -182,7 +183,7 @@ const Signup = () => {
         </InputGroup>
       </FormControl>
       <Button
-        colorScheme="blue"
+        colorScheme="green"
         width="100%"
         style={{ marginTop: 15 }}
         onClick={submitHandler}
